@@ -6,3 +6,4 @@
 5-printf.c is a script that writes using printf
 6-size.c writes a C program that prints the size of various types on the computer it is compiled and run on
 100-intel is a script that generates the assembly code (Intel syntax) of a C code and save it in an output file
+101-quote.c writes a program
