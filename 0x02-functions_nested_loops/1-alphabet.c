@@ -2,6 +2,7 @@
 /**
 * print_alphabet - a function that prints the alphabet in lowercase.
 */
+int _putchar(char c);
 void print_alphabet(void)
 {
 char letter;
