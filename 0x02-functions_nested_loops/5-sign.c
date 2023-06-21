@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
-*print_sign -  a function that 
+*print_sign - a function that prints the sign of a number
  * @n: The character is alphabetic
  *
  * Return: 1 .
