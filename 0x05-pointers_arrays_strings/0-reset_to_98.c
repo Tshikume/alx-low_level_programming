@@ -1,21 +1,17 @@
 #include <stdio.h>
 
-/**
- * main - take a pointer to an int
- *
- * Return: Always 0.
- */
-int main(void)
+void reset_to_98(int *n)
 {
-int n;
-int *p;
+    *n = 98;
+}
 
-n = 98;
-p = &n;
-printf("Value of 'n': %d\n", n);
-printf("Address of 'n': %p\n", (void *)&n);
-printf("Value of 'p': %p\n", (void *)p);
-*p = 402;
-printf("Value of 'n': %d\n", n);
+int main(void) 
+{
+int num = 0;
+
+printf("Before: %d\n", num);
+reset_to_98(&num);
+printf("After: %d\n", num);
+
 return (0);
 }
