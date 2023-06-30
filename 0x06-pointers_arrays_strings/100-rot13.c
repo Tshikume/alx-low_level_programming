@@ -1,24 +1,38 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
- * rot13 - rotate characters 13 places in the alphabet
- * @s: string
- * Return: string `s` rotated
+ * rot13 - Encodes a string using ROT13 cipher
+ * @str: The string to encode
+ *
+ * Return: Pointer to the encoded string
  */
-
-char *rot13(char *s)
+char *rot13(char *str)
 {
-	int i;
-	char storeh[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
-	char storel[] = "nopqrstuvwxyzabcdefghijklm";
+char *ptr = str;
+int i, j;
+char *alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if ((s[i] > 64 && s[i] < 91) || (s[i] > 96 && s[i] < 123))
-		{
-			s[i] = (s[i] - 65 > 25) ?
-				storel[s[i] - 97] : storeh[s[i] - 65];
-		}
-	}
-	return (s);
+while (*ptr)
+{
+for (i = 0; alpha[i] != '\0'; i++)
+{
+if (*ptr == alpha[i])
+{
+char encoded_char = rot13[i];
+write(1, &encoded_char, 1);
+break;
+}
+}
+
+if (alpha[i] == '\0')
+{
+write(1, ptr, 1);
+}
+
+ptr++;
+}
+
+return (str);
 }
