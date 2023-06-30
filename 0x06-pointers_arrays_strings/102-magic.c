@@ -1,19 +1,5 @@
 #include <stdio.h>
-/**
- * main - Entry point of the program
- *
- * Description:
- * This program demonstrates a coding challenge that involves manipulating
- * the value of a variable indirectly using pointer arithmetic.
- * It initializes
- * an integer variable `n`, an integer array `a`,
- * and a pointer `p` to an integer.
- * The challenge is to modify the value of an element
- * in memory using only the pointer `p`,
- * without directly accessing or modifying the array `a`.
- *
- * Return: Always 0 (Success)
- */
+
 int main(void)
 {
 int n;
