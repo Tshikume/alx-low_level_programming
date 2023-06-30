@@ -7,3 +7,5 @@
 6-cap_string.c is a function that capitalizes all words of a string
 7-leet.c encodes string into 1337
 102-magic.c function that performs magic
+103-infinite_add.c is a function that adds two numbers
+104-print_buffer.c is a function that prints a buffer
