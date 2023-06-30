@@ -6,8 +6,7 @@
  * Return: encoded string `s`
  */
 
-char *leet(char *str)
-{
+char *leet(char *str){
     char *encoded = malloc(strlen(str) + 1);
     if (encoded == NULL) {
         // Memory allocation failed
