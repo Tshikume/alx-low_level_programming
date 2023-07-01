@@ -14,41 +14,43 @@ void print_buffer(char *b, int size)
 
 	if (size <= 0)
 	{
-		printf("\n");
+		putchar('\n');
 		return;
 	}
-
 	for (i = 0; i < size; i += 10)
 	{
 		printf("%08x: ", i);
-
-		/* Print hex values */
-		for (j = i; j < i + 10; j++)
-		{
-			if (j < size)
-				printf("%02x", b[j]);
-			else
-				printf("  ");
-
-			if (j % 2 != 0)
-				printf(" ");
-		}
-
-		/* Print buffer content */
+/* Print hex values */
 		for (j = i; j < i + 10; j++)
 		{
 			if (j < size)
 			{
-				if (b[j] >= 32 && b[j] <= 126)
-					printf("%c", b[j]);
-				else
-					printf(".");
+				printf("%02x", b[j]);
+if (j % 2 != 0)
+					putchar(' ');
 			}
 			else
+			{
+				printf("  ");
+				if (j % 2 != 0)
+					putchar(' ');
+			}
+		}
+		/* Print buffer content */
+		for (j = i; j < i + 10; j++)
+		{
+			if (j < size)
 {
-printf(" ");
+if (b[j] >= 32 && b[j] <= 126)
+putchar(b[j]);
+else
+putchar('.');
+}
+else
+{
+putchar(' ');
 }
 }
-printf("\n");
-	}
+putchar('\n');
+}
 }
