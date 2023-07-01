@@ -10,31 +10,36 @@
  *
  * Return: Pointer to the result string
  */
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int carry = 0;
-int i = strlen(n1) - 1;
-int j = strlen(n2) - 1;
-int k = size_r - 1;
+	int len1 = 0, len2 = 0, carry = 0, sum = 0;
+	int i = 0, j = 0, k = 0;
 
-r[k] = '\0';  /* Null-terminate the result string */
+	while (n1[len1] != '\0')
+		len1++;
+	while (n2[len2] != '\0')
+		len2++;
 
-while (i >= 0 || j >= 0 || carry > 0)
-{
-int digit1 = (i >= 0) ? n1[i--] - '0' : 0;
-int digit2 = (j >= 0) ? n2[j--] - '0' : 0;
+	if (len1 > size_r || len2 > size_r)
+		return (0);
 
-int sum = digit1 + digit2 + carry;
-carry = sum / 10;
-int digit = sum % 10;
+	i = len1 - 1;
+	j = len2 - 1;
+	k = size_r - 1;
 
-if (k <= 0)
-{
-return (0);  /* Result doesn't fit in the buffer */
-}
+	r[k] = '\0';
 
-r[--k] = digit + '0';
-}
-return (&r[k]);  /* Return a pointer to the start of the result */
+	while (i >= 0 || j >= 0 || carry > 0)
+	{
+		sum = carry;
+		if (i >= 0)
+			sum += n1[i--] - '0';
+		if (j >= 0)
+			sum += n2[j--] - '0';
+
+		carry = sum / 10;
+		r[--k] = (sum % 10) + '0';
+	}
+
+	return (&r[k]);
 }
