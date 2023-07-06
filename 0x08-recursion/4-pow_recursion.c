@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio>
 
 /**
  * main - check the code for Holberton School students.
