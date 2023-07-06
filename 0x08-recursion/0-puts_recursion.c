@@ -1,28 +1,16 @@
 #include "main.h"
 
 /**
- * _putchar - Writes a character to the standard output
- * @c: The character to be written
- *
- * Return: On success, returns the character written.
- * On error, returns -1 and sets errno appropriately.
+ * _puts_recursion - Prints a string followed by a new line
+ * @s: The string to be printed
  */
-int _putchar(char c)
+void _puts_recursion(char *s)
 {
-return (putchar(c));
-}
-
-/**
- * _puts_recursion - Prints a string followed by a new line recursively.
- * @st: The string to be printed.
- */
-void _puts_recursion(char *st)
-{
-if (*st == '\0')
+if (*s == '\0')
 {
 _putchar('\n');
 return;
 }
-_putchar(*st);
-_puts_recursion(st + 1);
+_putchar(*s);
+_puts_recursion(s + 1);
 }
